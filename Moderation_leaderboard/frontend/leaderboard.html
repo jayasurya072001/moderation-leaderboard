@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moderator Speed Leaderboard</title>
+  <link rel="stylesheet" href="leaderboard.css"/>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <div class="title">Moderator Speed Leaderboard</div>
+        <div class="subtitle">Let's see who's the Moderation MASTER!!!</div>
+      </div>
+      <div class="toolbar">
+        <div class="filters">
+          <div class="field">
+            <label for="start-input">Start</label>
+            <div class="input-wrap">
+              <svg viewBox="0 0 24 24" class="icon"><path d="M7 11h10M7 15h7M7 3v2m10-2v2M3 8h18M5 6h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></svg>
+              <input type="datetime-local" id="start-input" step="1" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="end-input">End</label>
+            <div class="input-wrap">
+              <svg viewBox="0 0 24 24" class="icon"><path d="M7 11h10M7 15h7M7 3v2m10-2v2M3 8h18M5 6h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              <input type="datetime-local" id="end-input" step="1" />
+            </div>
+          </div>
+
+          <div class="quick">
+            <button class="chip" data-range="1h">Last 1h</button>
+            <button class="chip" data-range="24h">Last 24h</button>
+            <button class="chip" data-range="7d">Last 7d</button>
+          </div>
+
+          <button class="btn" id="load-btn">Load</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div id="error" class="error" role="alert" hidden></div>
+
+      <div class="table-wrap">
+        <table id="leaderboard">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Batches</th>
+              <th>Avg(s)</th>
+              <th>RetryCount</th>
+              <th>Batches Score</th>
+              <th>Avg Score</th>
+              <th>Retry Score</th>
+              <th>Final Score</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="footer">
+        <div>Last checked: <span id="last-updated">—</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="leaderboard2.js"></script>
+</body>
+</html>
